@@ -1,3 +1,8 @@
 name = "auckland-interior-detail"
+compatibility_date = "2026-04-17"
+
+[assets]
+directory = "./"
+
 [[env.production]]
-  routes = ["/*"]
+routes = ["/*"]
