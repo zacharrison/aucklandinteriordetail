@@ -4,67 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auckland Interior Detail</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/form.js"></script>
     <style>
-        /* Inline CSS for immediate styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
         }
         header {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 15px;
+            background-color: green;
+            color: white;
+            padding: 20px;
             text-align: center;
-        }
-        .services, .addons, .booking-form, .guarantee {
-            margin: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         footer {
+            background-color: green;
+            color: white;
             text-align: center;
             padding: 10px;
-            background-color: #343a40;
-            color: #ffffff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .service {
+            background-color: #e9ffe9;
+        }
+        .addons {
+            background-color: #ffe9e9;
+        }
+        .booking-form {
+            background-color: #e9e9ff;
+        }
+        .guarantee {
+            background-color: #ffffe9;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Auckland Interior Detail</h1>
+        <h1>Welcome to Auckland Interior Detail</h1>
     </header>
-    <div class="services">
+    <section class="service">
         <h2>Our Services</h2>
-        <p>We provide high-quality interior detailing services for your vehicles. Our dedicated team ensures a pristine finish that helps maintain your car's aesthetic.
-        </p>
-    </div>
-    <div class="addons">
-        <h2>Add-ons</h2>
-        <p>Choose from a range of add-ons to enhance your detailing experience. From upholstery cleaning to engine bay detailing, we have you covered.
-        </p>
-    </div>
-    <div class="booking-form">
-        <h2>Book Your Service</h2>
+        <p>We offer a range of interior detailing services to make your space shine!</p>
+    </section>
+    <section class="addons">
+        <h2>Add-Ons</h2>
+        <p>Enhance your detailing with our exclusive add-ons.</p>
+    </section>
+    <section class="booking-form">
+        <h2>Booking Form</h2>
         <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br>
-            <input type="submit" value="Book Now">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="date">Booking Date:</label>
+            <input type="date" id="date" name="date" required><br><br>
+            <input type="submit" value="Submit">
         </form>
-    </div>
-    <div class="guarantee">
+    </section>
+    <section class="guarantee">
         <h2>Our Guarantee</h2>
-        <p>We are committed to providing the best service possible. If you are not satisfied, we will work to make it right.</p>
-    </div>
+        <p>We guarantee satisfaction with all our services.</p>
+    </section>
     <footer>
-        <p>&copy; 2026 Auckland Interior Detail</p>
+        <p>Contact us at info@aucklandinteriordetail.com</p>
     </footer>
 </body>
 </html>
