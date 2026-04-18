@@ -5,10 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auckland Interior Detail</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/form.js"></script>
+    <style>
+        /* Inline CSS for immediate styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+        }
+        .services, .addons, .booking-form, .guarantee {
+            margin: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Auckland Interior Detail</h1>
-    <p>Explore our services and portfolio.</p>
-    <script src="js/form.js"></script>
+    <header>
+        <h1>Auckland Interior Detail</h1>
+    </header>
+    <div class="services">
+        <h2>Our Services</h2>
+        <p>We provide high-quality interior detailing services for your vehicles. Our dedicated team ensures a pristine finish that helps maintain your car's aesthetic.
+        </p>
+    </div>
+    <div class="addons">
+        <h2>Add-ons</h2>
+        <p>Choose from a range of add-ons to enhance your detailing experience. From upholstery cleaning to engine bay detailing, we have you covered.
+        </p>
+    </div>
+    <div class="booking-form">
+        <h2>Book Your Service</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <input type="submit" value="Book Now">
+        </form>
+    </div>
+    <div class="guarantee">
+        <h2>Our Guarantee</h2>
+        <p>We are committed to providing the best service possible. If you are not satisfied, we will work to make it right.</p>
+    </div>
+    <footer>
+        <p>&copy; 2026 Auckland Interior Detail</p>
+    </footer>
 </body>
 </html>
