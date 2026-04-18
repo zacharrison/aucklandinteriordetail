@@ -680,7 +680,7 @@
     text-transform: uppercase;
     color: var(--muted);
   }
-  input, select, textarea {
+  input:not([type="checkbox"]), select, textarea {
     background: var(--surface);
     border: 1px solid rgba(255,255,255,0.08);
     color: var(--white);
@@ -693,10 +693,10 @@
     width: 100%;
     -webkit-appearance: none;
   }
-  input:focus, select:focus, textarea:focus {
+  input:not([type="checkbox"]):focus, select:focus, textarea:focus {
     border-color: rgba(201,168,76,0.5);
   }
-  input.error, select.error, textarea.error {
+  input:not([type="checkbox"]).error, select.error, textarea.error {
     border-color: var(--error);
   }
   select option { background: var(--surface); }
