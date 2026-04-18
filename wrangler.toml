@@ -1,8 +1,1 @@
-name = "aucklandinteriordetail"
-compatibility_date = "2026-04-17"
-
-[assets]
-directory = "./"
-
-[[env.production]]
-routes = ["/*"]
+pages_build_output_dir = "."
