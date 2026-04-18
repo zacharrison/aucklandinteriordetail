@@ -731,6 +731,11 @@
     border-color: rgba(201,168,76,0.35);
     background: var(--surface2);
   }
+  .addon-check-item:has(input:checked),
+  .addon-check-item.checked {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
   .addon-check-item input[type="checkbox"] {
     width: 16px;
     height: 16px;
@@ -739,6 +744,7 @@
     accent-color: var(--gold);
     padding: 0;
     cursor: pointer;
+    pointer-events: none;   /* prevent double-toggle */
   }
   .addon-check-label {
     display: flex;
@@ -1730,6 +1736,8 @@
 
       checkbox.checked = !checkbox.checked;
       this.classList.toggle('selected', checkbox.checked);
+      const checkItem = checkbox.closest('.addon-check-item');
+      if (checkItem) checkItem.classList.toggle('checked', checkbox.checked);
       updateEstimator();
 
       // Smooth-scroll to booking form
@@ -1747,6 +1755,9 @@
       const key = this.id.replace('check_', '');
       const card = document.querySelector('.addon-card[data-addon="' + key + '"]');
       if (card) card.classList.toggle('selected', this.checked);
+      // Update the check-item tile visual state
+      const item = this.closest('.addon-check-item');
+      if (item) item.classList.toggle('checked', this.checked);
     });
   });
 
