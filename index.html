@@ -215,7 +215,7 @@ footer { background: #0a0a0a; text-align: center; padding: 35px; border-top: 1px
   <div class="booking-wrapper">
     <p class="intro-text">Fill out the form below or call us directly on <strong style="color: #c9a84c;">027 342 6478</strong>. We'll contact you within a few hours to confirm.</p>
     
-    <form class="booking-form" action="https://formspree.io/f/meevgrbk" method="POST">
+    <form class="booking-form" id="bookingFormElement">
       
       <div class="form-row">
         <div class="form-group">
@@ -273,6 +273,13 @@ footer { background: #0a0a0a; text-align: center; padding: 35px; border-top: 1px
       <p class="form-note">No payment now — we'll confirm and arrange payment after.</p>
     </form>
 
+    <div id="bookingSuccess" style="display:none; text-align:center; padding: 60px 20px;">
+      <div style="font-size: 80px; color: #27ae60; line-height: 1;">✓</div>
+      <h2 style="color: #27ae60; margin: 20px 0 15px; font-size: 32px;">Booking Placed!</h2>
+      <p style="font-size: 16px; color: rgba(245,242,236,0.85); max-width: 480px; margin: 0 auto 20px;">Thank you for your booking. We've received your request and will contact you within a few hours to confirm.</p>
+      <p style="font-size: 18px; font-weight: 600; color: #c9a84c;">📞 027 342 6478</p>
+    </div>
+
   </div>
 </section>
 
@@ -289,6 +296,29 @@ footer { background: #0a0a0a; text-align: center; padding: 35px; border-top: 1px
   <p><strong>📞 027 342 6478</strong> — Call or text anytime</p>
   <p style="margin-top: 15px;">© 2026 Auckland Interior Detail. Flat Bush, East Auckland. 8am–10pm, 7 days a week.</p>
 </footer>
+
+<script>
+  document.getElementById('bookingFormElement').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.target;
+    fetch('https://formspree.io/f/meevgrbk', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then((response) => {
+      if (response.ok) {
+        form.style.display = 'none';
+        const success = document.getElementById('bookingSuccess');
+        success.style.display = 'block';
+        success.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Something went wrong. Please try again or call us on 027 342 6478.');
+      }
+    }).catch(() => {
+      alert('Something went wrong. Please try again or call us on 027 342 6478.');
+    });
+  });
+</script>
 
 </body>
 </html>
