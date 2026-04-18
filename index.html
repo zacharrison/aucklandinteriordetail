@@ -4,194 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auckland Interior Detail</title>
-    <style>
-        /* Existing CSS styles */
-        /* ... other styles ... */
-        /* BEFORE/AFTER GALLERY */
-        #results { background: var(--black); }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-        .ba-card {
-            background: var(--charcoal);
-            border: 1px solid var(--border);
-            border-radius: 2px;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-        .ba-card:hover { border-color: rgba(201,168,76,0.35); }
-        .ba-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px;
-            position: relative;
-        }
-        .ba-img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            display: block;
-        }
-        .ba-img-placeholder {
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: var(--surface);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .ba-img-placeholder span {
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-        .ba-img-placeholder svg {
-            opacity: 0.2;
-        }
-        .ba-labels {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px;
-        }
-        .ba-label {
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            padding: 6px 12px;
-            background: var(--surface);
-        }
-        .ba-label.before { color: var(--muted); }
-        .ba-label.after { color: var(--gold); }
-        .ba-info {
-            padding: 20px 24px;
-        }
-        .ba-service {
-            font-size: 10px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 6px;
-        }
-        .ba-desc {
-            font-family: var(--font-display);
-            font-size: 22px;
-            letter-spacing: 0.02em;
-            margin-bottom: 6px;
-        }
-        .ba-detail {
-            font-size: 13px;
-            font-weight: 300;
-            color: var(--muted);
-        }
-        .gallery-coming-soon {
-            text-align: center;
-            padding: 80px 40px;
-            background: var(--charcoal);
-            border: 1px solid var(--border);
-            border-radius: 2px;
-        }
-        .gallery-coming-soon-title {
-            font-family: var(--font-display);
-            font-size: 32px;
-            margin-bottom: 12px;
-            color: var(--muted);
-        }
-        .gallery-coming-soon-body {
-            font-size: 14px;
-            font-weight: 300;
-            color: var(--muted);
-            max-width: 360px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        @media (max-width: 768px) {
-            .gallery-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#how">How It Works</a></li>
-            <li><a href="#results">Results</a></li>
-            <li><a href="#area">Service Area</a></li>
-        </ul>
-    </nav>
-    <section id="how">
-        <!-- Other content -->
-    </section>
-
-    <section id="results">
-        <div class="section-header">
-            <div class="section-label">The Results</div>
-            <h2 class="section-title">Before & After</h2>
-            <p class="section-sub">Real cars, real results. Every photo is from an actual job carried out by us in East Auckland.</p>
-        </div>
-
-        <div class="gallery-coming-soon">
-            <div class="gallery-coming-soon-title">Photos Coming Soon</div>
-            <p class="gallery-coming-soon-body">We're just getting started — check back soon to see real before & after results from our latest jobs.</p>
-        </div>
-
-        <!-- UNCOMMENT THIS BLOCK AND REMOVE THE COMING SOON BOX ABOVE WHEN YOU HAVE PHOTOS -->
-        <!-- <div class="gallery-grid">
-            <div class="ba-card">
-                <div class="ba-images">
-                    <img class="ba-img" src="images/job1-before.jpg" alt="Before detail - seats">
-                    <img class="ba-img" src="images/job1-after.jpg" alt="After detail - seats">
-                </div>
-                <div class="ba-labels">
-                    <span class="ba-label before">Before</span>
-                    <span class="ba-label after">After</span>
-                </div>
-                <div class="ba-info">
-                    <div class="ba-service">Full Interior Detail</div>
-                    <div class="ba-desc">Fabric Seats & Carpets</div>
-                    <div class="ba-detail">Howick · Toyota Camry 2018</div>
-                </div>
+    <header>
+        <nav>
+            <div class="hamburger-menu">
+                <button aria-label="Toggle navigation">☰</button>
             </div>
-            <div class="ba-card">
-                <div class="ba-images">
-                    <img class="ba-img" src="images/job2-before.jpg" alt="Before detail - dashboard">
-                    <img class="ba-img" src="images/job2-after.jpg" alt="After detail - dashboard">
-                </div>
-                <div class="ba-labels">
-                    <span class="ba-label before">Before</span>
-                    <span class="ba-label after">After</span>
-                </div>
-                <div class="ba-info">
-                    <div class="ba-service">Basic Interior Clean</div>
-                    <div class="ba-desc">Dashboard & Console</div>
-                    <div class="ba-detail">Botany · Mazda CX-5 2020</div>
-                </div>
-            </div>
-            <div class="ba-card">
-                <div class="ba-images">
-                    <img class="ba-img" src="images/job3-before.jpg" alt="Before detail - carpets">
-                    <img class="ba-img" src="images/job3-after.jpg" alt="After detail - carpets">
-                </div>
-                <div class="ba-labels">
-                    <span class="ba-label before">Before</span>
-                    <span class="ba-label after">After</span>
-                </div>
-                <div class="ba-info">
-                    <div class="ba-service">Odour & Deep Clean</div>
-                    <div class="ba-desc">Pet Hair & Carpet Extraction</div>
-                    <div class="ba-detail">Flat Bush · Honda Odyssey 2017</div>
-                </div>
-            </div>
-        </div> -->
-    </section>
-
+            <ul class="navigation">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Auckland Interior Detail</h1>
+            <p>Open Hours: 8am-10pm</p>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Rebook within 60 days, get 15% off your next detail!</p>
+            <ul>
+                <li>Fabric Protection - $25</li>
+                <li>Headliner Cleaning - $35</li>
+                <li>Stain Removal Pack - $40</li>
+                <li>Ceramic Interior Coating - $50</li>
+                <li>Allergen Treatment - $30</li>
+                <li>Pet Hair Deep Removal - $35</li>
+                <li>Child Car Seat Deep Clean - $45</li>
+            </ul>
+        </section>
+        <section id="booking">
+            <h2>Booking Form</h2>
+            <form>
+                <!-- Booking Form Fields -->
+            </form>
+        </section>
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <p>Customer Reviews Coming Soon</p>
+        </section>
+        <section id="customer-satisfaction">
+            <h2>Customer Satisfaction Guarantee</h2>
+            <p>We won't leave until you're satisfied with the job.</p>
+        </section>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <p>Reviews Coming Soon</p>
+        </section>
+    </main>
     <footer>
-        <a href="#how">How It Works</a>
-        <a href="#results">Results</a>
-        <a href="#area">Service Area</a>
+        <p>&copy; 2026 Auckland Interior Detail. All rights reserved.</p>
     </footer>
 </body>
 </html>
